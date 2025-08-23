@@ -1,2 +1,2 @@
 import streamlit as st
-st.title("Hello GeeksForGeeks !!!")
+st.title("WhatsApp Chats Analyzer")
