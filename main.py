@@ -159,7 +159,8 @@ if __name__ == '__main__':
         
         @st.dialog("Security Information")
         def security_info():
-            st.write("Your chat is not stored anywhere (I don't have the money to store your data). However, it will go to Google because this application is using gemini-2.5-flash model.")
+            st.write("Your chat is not stored anywhere (I don't have the money to store your data).")
+            st.write("However, this application is using Google's model gemini-2.5-flash. So, if you don't trust Google, don't give it sensitive chats. I, personally, wouldn't.")
         if "security_info" not in st.session_state:
             if st.button("Security Information"):
                 security_info()
