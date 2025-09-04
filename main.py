@@ -31,8 +31,10 @@ def clean_chats(chat_txt_file):
     re_remove_pattern = f".*{remove_line}.*\n?"
     clean_chat_str1 = re.sub(re_remove_pattern, "", raw_chat_str)
     
-    re_group_pattern = re.compile(r"^(\d{1,2}/\d{1,2}/\d{2}), (\d{2}:\d{2}) - ([^:]+): (.+)$")
-
+    
+    re_group_pattern = re.compile(r"^\[?(\d{1,2}/\d{1,2}/\d{2,4}),\s+(\d{1,2}:\d{2}(?::\d{2})?(?:\s*[APap][Mm])?)\]?(?:\s*-\s*|\s+)([^:]+):\s*(.+)$")
+    
+    
     messages = []
     clean_chat_str = ""
     
@@ -55,11 +57,11 @@ def clean_chats(chat_txt_file):
                 })
                 formatted_line = f"{date}, {time} - {sender}: {message}\n"
                 clean_chat_str += formatted_line
-    
+
     return messages, clean_chat_str
 
 def create_embeddings(messages):
-    #creating docs          
+    #creating docs      
     docs = [
         Document(
             page_content=m["message"],
