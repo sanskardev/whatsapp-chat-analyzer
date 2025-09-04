@@ -14,7 +14,7 @@ from langchain_core.prompts import ChatPromptTemplate
 #llm
 llm = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
 
-st.title("Ask you WhatsApp chats anything!")
+st.title("Ask your WhatsApp chats anything!")
 
 @st.dialog("Security Information")
 def security_info():
