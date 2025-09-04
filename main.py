@@ -1,6 +1,6 @@
 import streamlit as st
 import re
-import os
+# import os
 from langchain.chat_models import init_chat_model
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -10,11 +10,11 @@ from langchain_core.prompts import ChatPromptTemplate
 
 
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "C:\gen-lang-client-0199782979-dc138e1bc6f3.json"
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "C:\gen-lang-client-0199782979-dc138e1bc6f3.json"
 #llm
 llm = init_chat_model("gemini-2.5-flash", model_provider="google_genai")
 
-st.title("WhatsApp Chats Analyzer")
+st.title("Ask you WhatsApp chats anything!")
 
 @st.dialog("Security Information")
 def security_info():
